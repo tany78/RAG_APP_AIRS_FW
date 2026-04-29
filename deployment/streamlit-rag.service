@@ -1,0 +1,19 @@
+[Unit]
+Description=Streamlit RAG Application
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/streamlit-rag-app
+Environment="PATH=/opt/streamlit-rag-app/venv/bin:/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/opt/streamlit-rag-app/.env
+ExecStart=/opt/streamlit-rag-app/venv/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=streamlit-rag
+
+[Install]
+WantedBy=multi-user.target
