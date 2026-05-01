@@ -106,7 +106,7 @@ else
     cat > "$APP_DIR/.env" << EOF
 GCP_PROJECT="$GCP_PROJECT_ID"
 GCP_LOCATION="$GCP_REGION"
-GEMINI_CHAT_MODEL="gemini-1.5-pro-001"
+GEMINI_CHAT_MODEL="gemini-2.5-flash"
 GEMINI_EMBEDDING_MODEL="text-embedding-004"
 EOF
     chown $APP_USER:$APP_USER "$APP_DIR/.env"
